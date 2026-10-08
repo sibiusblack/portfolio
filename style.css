@@ -299,13 +299,25 @@ a:focus-visible {
   color: var(--purple);
   margin-bottom: 0.5rem;
 }
-.stat-label { font-size: 0.95rem; color: var(--ink); line-height: 1.45; display: block; margin-bottom: 1.25rem; }
+.stat-label { font-size: 1rem; color: var(--ink); line-height: 1.4; display: block; margin-bottom: 1.25rem; }
 .stat-tag {
   margin-top: auto;
   padding-top: 0.75rem;
   border-top: 1px solid var(--lilac);
-  font-size: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+.stat-company {
+  font-family: var(--body);
   font-weight: 500;
+  font-size: 0.82rem;
+  color: var(--ink);
+}
+.stat-project {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 1rem;
   color: var(--purple);
 }
 
