@@ -8,77 +8,170 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;1,400&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
 
   <div class="wrap">
     <header class="site-header">
-      <a class="wordmark" href="index.html">Sibi</a>
+      <a class="wordmark" href="#top">Sibi</a>
       <nav class="site-nav" aria-label="Main">
         <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
           <li><a href="#work">Work</a></li>
-          <li><a href="writing.html">Writing</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="#personal">Writing</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
     </header>
 
-    <main>
+    <main id="top">
+
+      <!-- Hero -->
       <section class="hero">
-        <div class="hero-intro">
+        <div>
           <h1>Hi, I'm Sibi.</h1>
-          <p>I'm a content marketer based in Toronto. I've spent the past four years writing content for travel, tech, B2B, and the arts.</p>
-          <p>I started out writing stories for a virtual heritage museum, then moved into agency work at Panorbit, handling content strategy and campaigns for clients including Reliance. Most recently, I was at Headout writing travel experience pages and destination guides, with a focus on SEO and helping people go from browsing to booking.</p>
-          <p>My work usually sits somewhere between research, SEO, and writing. I like taking something complex or unfamiliar and making it clear and enjoyable to read.</p>
+          <p class="hero-lede">A content marketer in Toronto, writing for travel, tech, B2B, and the arts.</p>
         </div>
-        <p class="hero-note">Currently open to content marketing roles in the GTA. <a href="contact.html">Get in touch</a> or <a href="assets/resume.pdf">download my resume</a>.</p>
+        <p class="hero-note">Currently open to content marketing roles in the GTA. <a href="#contact">Get in touch</a> or <a href="assets/resume.pdf">download my resume</a>.</p>
       </section>
 
-      <section class="section" id="work">
-        <h2>Selected work</h2>
-        <ul class="work-list">
-          <li>
-            <a href="work/headout.html">
-              <span class="work-title">Travel content that helps people book</span>
-              <span class="work-desc">Experience pages and destination guides across France and Italy, written with SEO and the booking journey in mind.</span>
-              <span class="work-meta">Headout</span>
-            </a>
-          </li>
-          <li>
-            <a href="work/reliance.html">
-              <span class="work-title">A campaign for a national B-school competition</span>
-              <span class="work-desc">Content strategy and editorial planning for The Ultimate Pitch, across social, video, events, and live finals-day coverage.</span>
-              <span class="work-meta">Panorbit for Reliance</span>
-            </a>
-          </li>
-          <li>
-            <a href="work/b2b.html">
-              <span class="work-title">Making technical ideas readable</span>
-              <span class="work-desc">Website copy, eBooks, and whitepapers for tech and B2B clients, adapting tone for each audience.</span>
-              <span class="work-meta">Panorbit</span>
-            </a>
-          </li>
+      <!-- About -->
+      <section class="section" id="about">
+        <h2>About</h2>
+        <div class="about-body">
+          <p>I've spent the past four years writing content for travel, tech, B2B, and the arts. I started out writing stories for a virtual heritage museum, then moved into agency work at Panorbit, where I handled content strategy and campaigns for clients including Reliance. Most recently, I was at Headout writing travel experience pages and destination guides, with a focus on SEO and on helping people go from browsing to booking.</p>
+          <p>Since moving to Toronto, I've been volunteering as a writer for a local music festival, working on sponsorship and promotional content.</p>
+          <p>My work usually sits somewhere between research, SEO, and writing. I like taking something complex or unfamiliar and making it clear and enjoyable to read, and I like seeing how it performs once it's out in the world.</p>
+        </div>
+      </section>
+
+      <!-- Skills, sectors, numbers -->
+      <section class="section" id="skills">
+        <h2>What I bring</h2>
+
+        <ul class="stats">
+          <li><span class="stat-num">4+</span><span class="stat-label">years in content marketing</span></li>
+          <li><span class="stat-num">120+</span><span class="stat-label">travel experience pages written</span></li>
+          <li><span class="stat-num">50+</span><span class="stat-label">destination guides across 20+ cities</span></li>
+          <li><span class="stat-num">10+</span><span class="stat-label">agency clients across B2B and tech</span></li>
         </ul>
-      </section>
 
-      <section class="section">
-        <div class="side">
-          <h2>On the side</h2>
+        <div class="tag-groups">
           <div>
-            <p>Since moving to Toronto, I've been volunteering as a writer for a local music festival, working on sponsorship and promotional content.</p>
-            <p>Outside of work, I write about film, books, and culture on my blog and newsletter, <a href="https://sibiusblack.substack.com/">Zigarthanda</a>.</p>
+            <h3>Skills</h3>
+            <ul class="tags">
+              <li>Content strategy</li>
+              <li>SEO and content optimization</li>
+              <li>Copywriting and brand voice</li>
+              <li>Editorial calendars</li>
+              <li>Campaign development</li>
+              <li>Multi-channel content</li>
+              <li>Content performance analysis</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Sectors</h3>
+            <ul class="tags">
+              <li>Travel</li>
+              <li>Technology</li>
+              <li>B2B</li>
+              <li>Education</li>
+              <li>Nonprofit</li>
+              <li>Arts and culture</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Tools</h3>
+            <ul class="tags">
+              <li>GA4</li>
+              <li>Google Search Console</li>
+              <li>Semrush</li>
+              <li>Ahrefs</li>
+              <li>HubSpot</li>
+              <li>WordPress</li>
+              <li>Looker</li>
+              <li>Canva</li>
+              <li>AI-assisted workflows</li>
+            </ul>
           </div>
         </div>
       </section>
+
+      <!-- Selected work -->
+      <section class="section" id="work">
+        <h2>Selected work</h2>
+        <div class="work-list">
+
+          <details>
+            <summary>
+              <span class="work-title">Travel content that helps people book</span>
+              <span class="work-meta">Headout</span>
+            </summary>
+            <div class="work-body">
+              <p>At Headout, I wrote experience pages and destination guides across France and Italy, turning historical and logistical detail into content that's easy to read and easy to act on.</p>
+              <p>I researched and clustered keywords to match search intent, and reworked page structure, FAQs, and value messaging on high-traffic listings. On the Museo Ferrari page, this contributed to a 14% uplift in search-to-booking conversion.</p>
+              <p><a href="YOUR-HEADOUT-LINK">See a sample page</a></p>
+            </div>
+          </details>
+
+          <details>
+            <summary>
+              <span class="work-title">A campaign for a national B-school competition</span>
+              <span class="work-meta">Panorbit for Reliance</span>
+            </summary>
+            <div class="work-body">
+              <p>I led content strategy and editorial planning for Reliance's The Ultimate Pitch Season X, a competition with 22.8K+ participants.</p>
+              <p>That meant campaign messaging across Instagram, LinkedIn, and YouTube, plus event videos, pitch decks, out-of-home creatives, and live coverage on finals day. Over two months, the campaign reached 155K+ people on social media.</p>
+              <p><a href="YOUR-CAMPAIGN-LINK">See the campaign</a></p>
+            </div>
+          </details>
+
+          <details>
+            <summary>
+              <span class="work-title">One voice across a startup accelerator's channels</span>
+              <span class="work-meta">Panorbit for JioGenNext</span>
+            </summary>
+            <div class="work-body">
+              <p>I managed content and brand voice for JioGenNext, Reliance's startup accelerator, editing and aligning 100+ posts across Instagram, LinkedIn, Facebook, and YouTube so they sounded like one brand.</p>
+              <p><a href="YOUR-JIOGENNEXT-LINK">See the posts</a></p>
+            </div>
+          </details>
+
+          <details>
+            <summary>
+              <span class="work-title">Making technical ideas readable</span>
+              <span class="work-meta">Panorbit</span>
+            </summary>
+            <div class="work-body">
+              <p>For 10+ agency clients, I wrote website copy, eBooks, whitepapers, and marketing collateral, adapting tone and structure for B2B and technical audiences.</p>
+              <p><a href="YOUR-B2B-SAMPLE-LINK">See a sample</a></p>
+            </div>
+          </details>
+
+        </div>
+      </section>
+
+      <!-- Personal work -->
+      <section class="section" id="personal">
+        <div class="side">
+          <h2>On the side</h2>
+          <div>
+            <p>Outside of work, I write about film, books, and culture on my blog and newsletter, <a href="YOUR-SUBSTACK-LINK">Zigarthanda</a>, which I've been running since 2020.</p>
+            <p>One of my essays on film and family was featured in Film Companion's Readers' Write section. <a href="YOUR-FILM-COMPANION-LINK">Read the essay</a></p>
+          </div>
+        </div>
+      </section>
+
     </main>
 
-    <footer class="site-footer">
+    <!-- Contact -->
+    <footer class="site-footer" id="contact">
       <h2>Let's talk.</h2>
       <ul class="contact-links">
-        <li><a href="mailto:bsibiraj31@gmail.com">bsibiraj31@gmail.com</a></li>
-        <li><a href="https://www.linkedin.com/in/sibiraj-balasubramaniam">LinkedIn</a></li>
+        <li><a href="mailto:YOUR-EMAIL@example.com">YOUR-EMAIL@example.com</a></li>
+        <li><a href="https://www.linkedin.com/in/YOUR-LINKEDIN">LinkedIn</a></li>
         <li><a href="assets/resume.pdf">Resume (PDF)</a></li>
       </ul>
       <p class="fineprint">© 2026 Sibi. Based in Toronto, Ontario.</p>
