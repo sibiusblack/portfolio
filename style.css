@@ -302,31 +302,38 @@ a:focus-visible {
 .about-body p { margin-bottom: 1.1rem; }
 .about-body p:first-child { font-size: 1.2rem; line-height: 1.6; }
 
-/* ---------- Sectors band ---------- */
+/* ---------- Sectors card ---------- */
 .sectors-band {
-  background: var(--bg-soft);
-  border-radius: 20px;
-  padding: clamp(1.75rem, 4vw, 2.75rem) clamp(1.25rem, 5vw, 3.5rem);
-  margin: 2rem 0;
-  text-align: center;
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  background: #FFFFFF;
+  border: 1px solid var(--rule);
+  border-left: 4px solid var(--purple);
+  border-radius: 12px;
+  padding: 1.1rem 1.5rem;
+  margin: 1rem 0 2rem;
+}
+.sectors-band::before {
+  content: "Sectors";
+  font-family: var(--body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--purple);
 }
 .sectors {
-  max-width: 38rem;
-  margin: 0 auto;
+  flex: 1;
+  min-width: 16rem;
   font-family: var(--display);
   font-weight: 500;
-  font-size: clamp(1.25rem, 2.3vw, 1.65rem);
-  line-height: 1.4;
+  font-size: clamp(1.1rem, 1.6vw, 1.25rem);
+  line-height: 1.45;
   color: var(--ink);
 }
 .sectors span { color: var(--purple); font-style: italic; }
-.sectors::before {
-  content: "\00B6";
-  display: block;
-  font-size: 1.15rem;
-  color: var(--purple);
-  margin-bottom: 0.4rem;
-}
 
 /* ---------- Skills and tools ---------- */
 .skill-table { border-top: 1px solid var(--rule); }
@@ -387,9 +394,9 @@ a:focus-visible {
 .section .skill-row--tools .skill-stage {
   font-style: italic;
   font-weight: 500;
-  color: var(--muted);
+  color: var(--ink);
 }
-.skill-row--tools .skill-items { font-size: 0.95rem; color: var(--muted); }
+.skill-row--tools .skill-items { font-size: 0.98rem; font-weight: 400; color: var(--ink); }
 
 /* ---------- Work list (expandable) ---------- */
 .work-list details { border-top: 2px solid var(--rule); }
