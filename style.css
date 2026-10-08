@@ -283,6 +283,8 @@ a:focus-visible {
   margin-bottom: 3rem;
 }
 .stats li {
+  display: flex;
+  flex-direction: column;
   background: var(--bg-soft);
   border-radius: 16px;
   padding: 1.5rem 1.25rem;
@@ -297,7 +299,15 @@ a:focus-visible {
   color: var(--purple);
   margin-bottom: 0.5rem;
 }
-.stat-label { font-size: 0.95rem; color: var(--muted); line-height: 1.4; display: block; }
+.stat-label { font-size: 0.95rem; color: var(--ink); line-height: 1.45; display: block; margin-bottom: 1.25rem; }
+.stat-tag {
+  margin-top: auto;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--lilac);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--purple);
+}
 
 /* ---------- Skills, sectors, tools ---------- */
 .tag-groups {
