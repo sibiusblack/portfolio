@@ -94,10 +94,10 @@ a:focus-visible {
 /* ---------- Hero ---------- */
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
   gap: 3rem;
-  padding: 3.5rem 0 3.5rem;
-  align-items: end;
+  padding: 3.5rem 0;
+  align-items: center;
 }
 .hero h1 {
   font-family: var(--display);
@@ -119,7 +119,48 @@ a:focus-visible {
   padding: 1.25rem 1.4rem;
   color: var(--ink);
   font-size: 1rem;
+  max-width: 30rem;
+  margin-top: 1.75rem;
 }
+
+/* ---------- Portrait with doodles ---------- */
+.portrait {
+  position: relative;
+  width: 100%;
+  max-width: 26rem;
+  aspect-ratio: 5 / 6;
+  justify-self: end;
+  margin: 0;
+  color: var(--purple);
+}
+.portrait-photo {
+  position: absolute;
+  left: 15%;
+  top: 10%;
+  width: 70%;
+  height: 80%;
+  object-fit: cover;
+  border-radius: 999px 999px 18px 18px;
+  background: var(--bg-soft);
+}
+.portrait-doodles {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.doodle-semicolon { font-family: var(--display); font-weight: 600; }
+
+/* Doodles draw themselves in once, on page load */
+.portrait-doodles [pathLength] {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: draw 1.8s ease-out 0.3s forwards;
+}
+.doodle-semicolon { opacity: 0; animation: appear 0.8s ease-out 1.2s forwards; }
+@keyframes draw { to { stroke-dashoffset: 0; } }
+@keyframes appear { to { opacity: 1; } }
 
 /* ---------- Sections ---------- */
 .section { padding: 4rem 0; scroll-margin-top: 1rem; }
@@ -261,7 +302,8 @@ a:focus-visible {
 
 /* ---------- Mobile ---------- */
 @media (max-width: 760px) {
-  .hero { grid-template-columns: 1fr; gap: 2rem; padding: 3rem 0; }
+  .hero { grid-template-columns: 1fr; gap: 2.5rem; padding: 2.5rem 0; }
+  .portrait { justify-self: center; max-width: 19rem; }
   .work-list summary { grid-template-columns: minmax(0, 1fr) 2rem; gap: 0.25rem 1rem; }
   .work-meta { grid-row: 2; }
   .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -273,4 +315,6 @@ a:focus-visible {
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
+  .portrait-doodles [pathLength] { animation: none; stroke-dashoffset: 0; }
+  .doodle-semicolon { animation: none; opacity: 1; }
 }
