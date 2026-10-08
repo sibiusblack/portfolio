@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Heritage sites turned into stories people want to hear | Sibi</title>
+  <meta name="description" content="Turned technical and historical research into voiceover, panel, and conversational stories for a virtual museum.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;1,400&family=EB+Garamond:ital,wght@0,500;0,600;1,500&family=Noto+Serif+Tamil:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css?v=27">
+</head>
+<body>
+
+  <div class="wrap">
+    <header class="site-header">
+      <a class="wordmark" href="../index.html">Sibi</a>
+      <nav class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="../index.html#about">About</a></li>
+          <li><a href="../index.html#skills">Skills</a></li>
+          <li><a href="../index.html#work" aria-current="page">Work</a></li>
+          <li><a href="../index.html#personal">Writing</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="cs">
+      <a class="cs-back" href="../index.html#work">&larr; All work</a>
+
+      <!-- Case study header -->
+      <header class="cs-hero">
+        <div class="cs-hero-text">
+          <p class="work-kind">Storytelling and scripts &middot; 1 min read</p>
+          <h1>Heritage sites turned into stories people want to hear</h1>
+          <p class="work-attr"><span class="work-company">India Lost and Found</span> <cite class="work-project">Heritage Map virtual museum</cite></p>
+          <div class="work-stat cs-stat"><span class="work-num">24</span><span class="work-label">heritage sites turned into stories</span></div>
+        </div>
+        <div class="cs-cover">
+          <img src="../assets/heritage-cover.jpg" alt="" onerror="this.style.visibility='hidden'">
+          <img class="logo-chip" src="../assets/logos/ilf.png" alt="India Lost and Found logo" onerror="this.outerHTML='<span class=&quot;logo-chip logo-chip--text&quot;>'+this.alt.replace(' logo','')+'</span>'">
+        </div>
+      </header>
+
+      <!-- At a glance -->
+      <dl class="case-glance">
+          <div><dt>Brief</dt><dd>Make history accessible in a virtual museum</dd></div>
+          <div><dt>Role</dt><dd>Narrator and Storyteller (internship)</dd></div>
+          <div><dt>Timeline</dt><dd>Mar 2022 – Feb 2023</dd></div>
+          <div><dt>Formats</dt><dd>Voiceover, panels, conversational</dd></div>
+          <div><dt>Recognition</dt><dd>Star Performer of the Month</dd></div>
+      </dl>
+
+      <!-- The brief -->
+      <section class="cs-section">
+        <h2>The brief</h2>
+        <p class="cs-lede">The Heritage Map virtual museum needed technical and historical material turned into stories a general audience would actually stay with.</p>
+      </section>
+
+      <!-- What I did -->
+      <section class="cs-section">
+        <h2>What I did</h2>
+        <ol class="case-steps">
+          <li><strong>Found the story in the research.</strong> Turned technical and historical detail on 24 sites into clear, accessible narratives.</li>
+          <li><strong>Wrote for three formats.</strong> Adapted each story for voiceover, gallery panels, and conversational formats.</li>
+        </ol>
+      </section>
+
+      <!-- The work -->
+      <section class="cs-section">
+        <h2>The work</h2>
+        <figure class="cs-visual">
+          <div class="cs-frame"><img src="../assets/heritage.jpg" alt="Heritage Map" onerror="this.style.visibility='hidden'"></div>
+          <figcaption>Heritage Map</figcaption>
+        </figure>
+      </section>
+
+      <!-- Results -->
+      <section class="cs-section">
+        <h2>The result</h2>
+        <ul class="cs-results">
+          <li><span class="cs-result-num">24</span><span>heritage sites brought to life</span></li>
+          <li><span class="cs-result-num">3</span><span>formats per story</span></li>
+          <li><span class="cs-result-num">Sept 2022</span><span>Star Performer of the Month</span></li>
+        </ul>
+        <p class="case-learned"><em>What I learned:</em> YOUR-TAKEAWAY: one line on what this project taught you.</p>
+        <p class="cs-link"><a href="YOUR-HERITAGE-LINK">Visit the Heritage Map &rarr;</a></p>
+      </section>
+
+      <!-- Previous / next -->
+      <nav class="cs-pager" aria-label="More case studies">
+        <a href="jiogennext.html"><span>Previous</span>One voice across a startup accelerator's channels</a>
+        <a href="headout.html" class="cs-pager-next"><span>Next</span>Turning high-traffic listings into better converters</a>
+      </nav>
+    </main>
+
+    <!-- Contact -->
+    <footer class="site-footer" id="contact">
+      <h2>Let's talk.</h2>
+      <ul class="contact-links">
+        <li><a href="mailto:YOUR-EMAIL@example.com">YOUR-EMAIL@example.com</a></li>
+        <li><a href="https://www.linkedin.com/in/YOUR-LINKEDIN">LinkedIn</a></li>
+        <li><a href="../assets/resume.pdf">Resume (PDF)</a></li>
+      </ul>
+      <p class="fineprint">© 2026 Sibi. Based in Toronto, Ontario.</p>
+    </footer>
+  </div>
+
+  <script>
+    // Before/after toggle
+    document.querySelectorAll('[data-compare]').forEach(function (fig) {
+      var buttons = fig.querySelectorAll('[data-show]');
+      buttons.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          buttons.forEach(function (b) {
+            var on = b === btn;
+            b.classList.toggle('is-active', on);
+            b.setAttribute('aria-pressed', on ? 'true' : 'false');
+          });
+          fig.querySelectorAll('[data-img]').forEach(function (img) {
+            img.hidden = img.dataset.img !== btn.dataset.show;
+          });
+        });
+      });
+    });
+  </script>
+</body>
+</html>
