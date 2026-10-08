@@ -302,71 +302,77 @@ a:focus-visible {
 .about-body p { margin-bottom: 1.1rem; }
 .about-body p:first-child { font-size: 1.2rem; line-height: 1.6; }
 
-/* ---------- Skills, grouped ---------- */
-.skill-groups {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 2.5rem;
+/* ---------- Sectors band ---------- */
+.sectors-band {
+  background: var(--bg-soft);
+  border-radius: 20px;
+  padding: clamp(2.5rem, 6vw, 4.5rem) clamp(1.5rem, 6vw, 4.5rem);
+  margin: 2rem 0;
+  text-align: center;
 }
-.skill-group {
-  border-top: 2px solid var(--purple);
-  padding-top: 1.25rem;
-}
-.section .skill-group h3 {
-  font-family: var(--display);
-  font-weight: 600;
-  font-size: 1.4rem;
-  line-height: 1.15;
-  margin-bottom: 0.75rem;
-}
-.skill-list { list-style: none; }
-.skill-list li {
-  padding: 0.55rem 0;
-  border-bottom: 1px solid var(--rule);
-  font-size: 0.98rem;
-}
-.skill-list li:last-child { border-bottom: none; }
-
-/* ---------- Sectors ---------- */
 .sectors {
-  max-width: 46rem;
-  margin: 4rem 0 3.5rem;
+  max-width: 44rem;
+  margin: 0 auto;
   font-family: var(--display);
-  font-size: clamp(1.5rem, 3vw, 2rem);
-  line-height: 1.35;
+  font-weight: 500;
+  font-size: clamp(1.6rem, 3.4vw, 2.4rem);
+  line-height: 1.3;
   color: var(--ink);
 }
 .sectors span { color: var(--purple); font-style: italic; }
-
-/* ---------- Tools ---------- */
-.tools {
-  display: flex;
-  align-items: center;
-  gap: 1.25rem 2rem;
-  flex-wrap: wrap;
-  background: var(--ink);
-  border-radius: 16px;
-  padding: 1.5rem 1.75rem;
+.sectors::before {
+  content: "\00B6";
+  display: block;
+  font-size: 1.4rem;
+  color: var(--purple);
+  margin-bottom: 0.75rem;
 }
-.section .tools-label {
+
+/* ---------- Skills and tools ---------- */
+.skill-table { border-top: 1px solid var(--rule); }
+.skill-row {
+  display: grid;
+  grid-template-columns: 15rem minmax(0, 1fr);
+  gap: 1rem 2.5rem;
+  align-items: baseline;
+  padding: 1.6rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+.section .skill-stage {
   font-family: var(--display);
   font-weight: 600;
-  font-size: 1.35rem;
-  color: var(--lilac);
+  font-size: 1.6rem;
+  line-height: 1.15;
   margin: 0;
 }
-.tools-list {
+.skill-num {
+  font-family: var(--body);
+  font-weight: 500;
+  font-size: 0.8rem;
+  color: var(--purple);
+  vertical-align: 0.5em;
+  margin-right: 0.35rem;
+}
+.skill-items {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  gap: 0.6rem 1.75rem;
-  flex: 1;
+  gap: 0.5rem 0;
+  font-size: 1.02rem;
 }
-.tools-list li {
-  color: #FFFFFF;
-  font-size: 0.95rem;
-  white-space: nowrap;
+.skill-items li:not(:last-child)::after {
+  content: "\00B7";
+  color: var(--purple);
+  font-weight: 600;
+  padding: 0 0.75rem;
 }
+/* tools: same row, quieter so skills lead */
+.section .skill-row--tools .skill-stage {
+  font-style: italic;
+  font-weight: 500;
+  color: var(--muted);
+}
+.skill-row--tools .skill-items { font-size: 0.95rem; color: var(--muted); }
 
 /* ---------- Work list (expandable) ---------- */
 .work-list details { border-top: 2px solid var(--rule); }
@@ -446,8 +452,7 @@ a:focus-visible {
   .portrait { justify-self: center; max-width: 18rem; }
   .work-list summary { grid-template-columns: minmax(0, 1fr) 2rem; gap: 0.25rem 1rem; }
   .work-meta { grid-row: 2; }
-  .skill-groups { grid-template-columns: 1fr; gap: 2rem; }
-  .tools { flex-direction: column; align-items: flex-start; }
+  .skill-row { grid-template-columns: 1fr; gap: 0.6rem; padding: 1.3rem 0; }
   .side { grid-template-columns: 1fr; gap: 1rem; padding: 2rem 1.5rem; }
   .site-nav ul { gap: 1.25rem; }
   html { scroll-padding-top: 8rem; }
