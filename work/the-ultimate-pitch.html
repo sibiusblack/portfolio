@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A two-month campaign for a national B-school competition | Sibi</title>
+  <meta name="description" content="Led content strategy and editorial planning across social, video, events, and live finals-day coverage.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;1,400&family=EB+Garamond:ital,wght@0,500;0,600;1,500&family=Noto+Serif+Tamil:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css?v=27">
+</head>
+<body>
+
+  <div class="wrap">
+    <header class="site-header">
+      <a class="wordmark" href="../index.html">Sibi</a>
+      <nav class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="../index.html#about">About</a></li>
+          <li><a href="../index.html#skills">Skills</a></li>
+          <li><a href="../index.html#work" aria-current="page">Work</a></li>
+          <li><a href="../index.html#personal">Writing</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="cs">
+      <a class="cs-back" href="../index.html#work">&larr; All work</a>
+
+      <!-- Case study header -->
+      <header class="cs-hero">
+        <div class="cs-hero-text">
+          <p class="work-kind">Multi-channel campaign &middot; 2 min read</p>
+          <h1>A two-month campaign for a national B-school competition</h1>
+          <p class="work-attr"><span class="work-company">Panorbit</span> <cite class="work-project">Reliance's The Ultimate Pitch Season X</cite></p>
+          <div class="work-stat cs-stat"><span class="work-num">155K+</span><span class="work-label">social reach in two months</span></div>
+        </div>
+        <div class="cs-cover">
+          <img src="../assets/pitch-cover.jpg" alt="" onerror="this.style.visibility='hidden'">
+          <img class="logo-chip" src="../assets/logos/reliance.png" alt="Reliance logo" onerror="this.outerHTML='<span class=&quot;logo-chip logo-chip--text&quot;>'+this.alt.replace(' logo','')+'</span>'">
+        </div>
+      </header>
+
+      <!-- At a glance -->
+      <dl class="case-glance">
+          <div><dt>Brief</dt><dd>Build a campaign for a 22.8K+ participant competition</dd></div>
+          <div><dt>Role</dt><dd>Content strategy and editorial lead</dd></div>
+          <div><dt>Timeline</dt><dd>Two months</dd></div>
+          <div><dt>Channels</dt><dd>Instagram, LinkedIn, YouTube, events, OOH</dd></div>
+          <div><dt>Formats</dt><dd>Posts, videos, decks, live coverage</dd></div>
+      </dl>
+
+      <!-- The brief -->
+      <section class="cs-section">
+        <h2>The brief</h2>
+        <p class="cs-lede">The Ultimate Pitch is Reliance's national B-school competition, and Season X drew 22.8K+ participants. It needed one campaign that could carry from the first call for entries through to finals day.</p>
+      </section>
+
+      <!-- What I did -->
+      <section class="cs-section">
+        <h2>What I did</h2>
+        <ol class="case-steps">
+          <li><strong>Planned it end to end.</strong> Owned the content strategy and editorial calendar for the full two-month run.</li>
+          <li><strong>Kept one message across every channel.</strong> Shaped campaign messaging for Instagram, LinkedIn, and YouTube, plus event videos, pitch decks, OOH, and event collateral, with short-form scripts for in-house video.</li>
+          <li><strong>Covered finals day live.</strong> Ran live social coverage of the finals so the campaign ended at its peak.</li>
+        </ol>
+      </section>
+
+      <!-- The work -->
+      <section class="cs-section">
+        <h2>The work</h2>
+        <figure class="cs-visual">
+          <div class="cs-frame"><img src="../assets/pitch.jpg" alt="Campaign creatives" onerror="this.style.visibility='hidden'"></div>
+          <figcaption>Campaign creatives</figcaption>
+        </figure>
+      </section>
+
+      <!-- Results -->
+      <section class="cs-section">
+        <h2>The result</h2>
+        <ul class="cs-results">
+          <li><span class="cs-result-num">155K+</span><span>social media reach over two months</span></li>
+          <li><span class="cs-result-num">22.8K+</span><span>competition participants</span></li>
+          <li><span class="cs-result-num">3</span><span>social platforms, plus events and OOH</span></li>
+        </ul>
+        <p class="case-learned"><em>What I learned:</em> YOUR-TAKEAWAY: one line on what this project taught you.</p>
+        <p class="cs-link"><a href="YOUR-CAMPAIGN-LINK">See the campaign &rarr;</a></p>
+      </section>
+
+      <!-- Previous / next -->
+      <nav class="cs-pager" aria-label="More case studies">
+        <a href="headout.html"><span>Previous</span>Turning high-traffic listings into better converters</a>
+        <a href="jiogennext.html" class="cs-pager-next"><span>Next</span>One voice across a startup accelerator's channels</a>
+      </nav>
+    </main>
+
+    <!-- Contact -->
+    <footer class="site-footer" id="contact">
+      <h2>Let's talk.</h2>
+      <ul class="contact-links">
+        <li><a href="mailto:YOUR-EMAIL@example.com">YOUR-EMAIL@example.com</a></li>
+        <li><a href="https://www.linkedin.com/in/YOUR-LINKEDIN">LinkedIn</a></li>
+        <li><a href="../assets/resume.pdf">Resume (PDF)</a></li>
+      </ul>
+      <p class="fineprint">© 2026 Sibi. Based in Toronto, Ontario.</p>
+    </footer>
+  </div>
+
+  <script>
+    // Before/after toggle
+    document.querySelectorAll('[data-compare]').forEach(function (fig) {
+      var buttons = fig.querySelectorAll('[data-show]');
+      buttons.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          buttons.forEach(function (b) {
+            var on = b === btn;
+            b.classList.toggle('is-active', on);
+            b.setAttribute('aria-pressed', on ? 'true' : 'false');
+          });
+          fig.querySelectorAll('[data-img]').forEach(function (img) {
+            img.hidden = img.dataset.img !== btn.dataset.show;
+          });
+        });
+      });
+    });
+  </script>
+</body>
+</html>
