@@ -321,31 +321,77 @@ a:focus-visible {
   color: var(--purple);
 }
 
-/* ---------- Skills, sectors, tools ---------- */
-.tag-groups {
+/* ---------- Skills, grouped ---------- */
+.skill-groups {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 2rem;
+  gap: 2.5rem;
 }
-.tags {
+.skill-group {
+  border-top: 2px solid var(--purple);
+  padding-top: 1.25rem;
+}
+.section .skill-group h3 {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 1.6rem;
+  line-height: 1.15;
+  margin-bottom: 0.35rem;
+}
+.skill-desc {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--muted);
+  margin-bottom: 1rem;
+}
+.skill-list { list-style: none; }
+.skill-list li {
+  padding: 0.55rem 0;
+  border-bottom: 1px solid var(--rule);
+  font-size: 0.98rem;
+}
+.skill-list li:last-child { border-bottom: none; }
+
+/* ---------- Sectors ---------- */
+.sectors {
+  max-width: 46rem;
+  margin: 4rem 0 3.5rem;
+  font-family: var(--display);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  line-height: 1.35;
+  color: var(--ink);
+}
+.sectors span { color: var(--purple); font-style: italic; }
+
+/* ---------- Tools ---------- */
+.tools {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem 2rem;
+  flex-wrap: wrap;
+  background: var(--ink);
+  border-radius: 16px;
+  padding: 1.5rem 1.75rem;
+}
+.section .tools-label {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 1.35rem;
+  color: var(--lilac);
+  margin: 0;
+}
+.tools-list {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 0.6rem 1.75rem;
+  flex: 1;
 }
-.tags li {
-  border: 1.5px solid var(--lilac);
-  border-radius: 999px;
-  padding: 0.3rem 0.85rem;
-  font-size: 0.92rem;
-  background: #FFFFFF;
-}
-.section h2 {
-  font-family: var(--display);
-  font-weight: 600;
-  font-size: clamp(1.85rem, 3.2vw, 2.35rem);
-  line-height: 1.05;
-  margin-bottom: 2rem;
+.tools-list li {
+  color: #FFFFFF;
+  font-size: 0.95rem;
+  white-space: nowrap;
 }
 
 /* ---------- Work list (expandable) ---------- */
@@ -427,7 +473,8 @@ a:focus-visible {
   .work-list summary { grid-template-columns: minmax(0, 1fr) 2rem; gap: 0.25rem 1rem; }
   .work-meta { grid-row: 2; }
   .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .tag-groups { grid-template-columns: 1fr; }
+  .skill-groups { grid-template-columns: 1fr; gap: 2rem; }
+  .tools { flex-direction: column; align-items: flex-start; }
   .side { grid-template-columns: 1fr; gap: 1rem; padding: 2rem 1.5rem; }
   .site-nav ul { gap: 1.25rem; }
   html { scroll-padding-top: 8rem; }
