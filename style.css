@@ -421,7 +421,8 @@ a:focus-visible {
   aspect-ratio: 16 / 9;
   background: var(--bg-soft);
 }
-.work-cover > img { width: 100%; height: 100%; object-fit: cover; }
+.work-cover { overflow: hidden; min-height: 0; }
+.work-cover > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; }
 .logo-chip {
   position: absolute;
   left: 1rem;
@@ -548,7 +549,8 @@ a:focus-visible {
   border-radius: 16px;
   overflow: hidden;
 }
-.cs-cover > img { width: 100%; height: 100%; object-fit: cover; }
+.cs-cover { min-height: 0; }
+.cs-cover > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; }
 
 .case-glance {
   display: grid;
@@ -611,7 +613,8 @@ a:focus-visible {
   border-radius: 12px;
   overflow: hidden;
 }
-.cs-frame img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+.cs-frame { position: relative; min-height: 0; }
+.cs-frame img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top; }
 .cs-frame img[hidden] { display: none; }
 .cs-visual figcaption { font-size: 0.82rem; color: var(--muted); margin-top: 0.5rem; }
 
