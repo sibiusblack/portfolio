@@ -204,32 +204,33 @@
     </footer>
   </div>
 
-<script>
-    // Opening-lines card: flips on click, and on its own every 60 seconds
+    <script>
+    // Numbers card: flips on click, and on its own every 60 seconds
     (function () {
-      var card = document.querySelector('.line-card');
-      var text = document.querySelector('.line-text');
-      var author = document.querySelector('.line-author');
-      var book = document.querySelector('.line-book');
-      var button = document.querySelector('.line-next');
-      var lines = Array.prototype.slice.call(document.querySelectorAll('.line-list li'));
-      if (!card || lines.length < 2) return;
- 
-      var current = 1;            // the line shown first (Moby-Dick)
+      var card = document.querySelector('.number-card');
+      var cap = document.querySelector('.number-cap');
+      var text = document.querySelector('.number-text');
+      var company = document.querySelector('.number-company');
+      var project = document.querySelector('.number-project');
+      var button = document.querySelector('.numbers-next');
+      var items = Array.prototype.slice.call(document.querySelectorAll('.number-list li'));
+      if (!card || items.length < 2) return;
+
+      var current = 0;            // the number shown first
       var delay = 60000;          // 60 seconds between automatic flips
       var timer;
       var calm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
- 
+
       function show(i) {
-        var li = lines[i];
+        var li = items[i];
+        cap.textContent = li.dataset.num;
         text.textContent = li.textContent;
-        text.setAttribute('lang', li.getAttribute('lang') || 'en');
-        author.textContent = li.dataset.author;
-        book.textContent = li.dataset.book;
+        company.textContent = li.dataset.company;
+        project.textContent = li.dataset.project;
       }
- 
+
       function next() {
-        current = (current + 1) % lines.length;
+        current = (current + 1) % items.length;
         if (calm) { show(current); return; }
         card.classList.add('is-flipping');
         setTimeout(function () {
@@ -237,12 +238,12 @@
           card.classList.remove('is-flipping');
         }, 300);
       }
- 
+
       function restartTimer() {
         clearInterval(timer);
         timer = setInterval(next, delay);
       }
- 
+
       button.addEventListener('click', function () { next(); restartTimer(); });
       restartTimer();
     })();
