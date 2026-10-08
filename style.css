@@ -180,10 +180,10 @@ a:focus-visible {
 
 /* the number as a drop cap, spanning the line and its attribution */
 .number-cap {
-  grid-row: 1 / span 2;
+  grid-row: 1;
   font-family: var(--display);
   font-weight: 600;
-  font-size: clamp(2.6rem, 5vw, 3.3rem);
+  font-size: clamp(2.6rem, 5vw, 3.4rem);
   line-height: 0.8;
   font-variant-numeric: lining-nums;
   color: var(--purple);
@@ -193,7 +193,7 @@ a:focus-visible {
 
 /* the description, set like the quote used to be */
 .number-text {
-  align-self: end;
+  align-self: center;
   font-family: var(--display);
   font-style: italic;
   font-weight: 500;
@@ -204,12 +204,15 @@ a:focus-visible {
 
 /* company and project, styled like author and book */
 .number-source {
+  grid-column: 1 / -1;
   align-self: start;
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
   gap: 0.1rem 0.75rem;
-  margin-top: 0.5rem;
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px dashed var(--rule);
 }
 .number-source::before {
   content: "\00B6";
