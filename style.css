@@ -544,7 +544,7 @@ a:focus-visible {
 .cs-stat .work-label { font-size: 1.3rem; }
 .cs-cover {
   position: relative;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 16 / 9;
   background: var(--bg-soft);
   border-radius: 16px;
   overflow: hidden;
