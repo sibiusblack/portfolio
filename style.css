@@ -1,15 +1,16 @@
 /* ---------- Colours and type ---------- */
 :root {
-  --paper: #F6F0E6;
-  --paper-deep: #EFE6D7;
-  --ink: #2B2320;
-  --muted: #6E6259;
-  --oxblood: #8A2D3B;
-  --marigold: #E3A73F;
-  --rule: #DCD0BF;
+  --bg: #F7F4FC;
+  --bg-soft: #EDE6FA;
+  --ink: #2A1F4A;
+  --muted: #6A6188;
+  --purple: #6B3FD4;
+  --purple-deep: #4B2A9E;
+  --lilac: #C9B8F2;
+  --rule: #E1D9F2;
 
-  --display: "Young Serif", Georgia, "Times New Roman", serif;
-  --body: "Literata", Georgia, "Times New Roman", serif;
+  --display: "Space Grotesk", "Segoe UI", Arial, sans-serif;
+  --body: "DM Sans", "Segoe UI", Arial, sans-serif;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -17,28 +18,28 @@
 html { scroll-behavior: smooth; }
 
 body {
-  background: var(--paper);
+  background: var(--bg);
   color: var(--ink);
   font-family: var(--body);
-  font-size: 1.125rem;
-  line-height: 1.7;
+  font-size: 1.0625rem;
+  line-height: 1.65;
   -webkit-font-smoothing: antialiased;
 }
 
 img { max-width: 100%; display: block; }
 
 a {
-  color: var(--oxblood);
+  color: var(--purple);
   text-decoration: underline;
-  text-decoration-color: var(--marigold);
+  text-decoration-color: var(--lilac);
   text-decoration-thickness: 2px;
   text-underline-offset: 4px;
 }
-a:hover { text-decoration-thickness: 4px; }
+a:hover { color: var(--purple-deep); text-decoration-color: var(--purple); }
 a:focus-visible {
-  outline: 3px solid var(--marigold);
+  outline: 3px solid var(--purple);
   outline-offset: 3px;
-  border-radius: 2px;
+  border-radius: 4px;
 }
 
 /* ---------- Layout ---------- */
@@ -52,33 +53,37 @@ a:focus-visible {
 .site-header {
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: center;
   flex-wrap: wrap;
   gap: 1rem;
-  padding: 2rem 0 1.25rem;
-  border-bottom: 1px solid var(--rule);
+  padding: 1.75rem 0 1.25rem;
 }
 .wordmark {
   font-family: var(--display);
-  font-size: 1.6rem;
-  color: var(--ink);
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--purple);
   text-decoration: none;
 }
+.wordmark:hover { color: var(--purple-deep); }
 .site-nav ul {
   display: flex;
   gap: 1.75rem;
   list-style: none;
 }
 .site-nav a {
+  font-family: var(--display);
   color: var(--ink);
   text-decoration: none;
   font-size: 1rem;
+  font-weight: 500;
 }
 .site-nav a:hover,
 .site-nav a[aria-current="page"] {
+  color: var(--purple);
   text-decoration: underline;
-  text-decoration-color: var(--marigold);
-  text-decoration-thickness: 3px;
+  text-decoration-color: var(--purple);
+  text-decoration-thickness: 2px;
 }
 
 /* ---------- Hero ---------- */
@@ -91,10 +96,11 @@ a:focus-visible {
 }
 .hero h1 {
   font-family: var(--display);
-  font-weight: 400;
+  font-weight: 700;
   font-size: clamp(3.25rem, 9vw, 7rem);
-  line-height: 0.98;
-  letter-spacing: -0.02em;
+  line-height: 0.95;
+  letter-spacing: -0.035em;
+  color: var(--ink);
   margin-bottom: 2rem;
 }
 .hero-intro p {
@@ -102,31 +108,31 @@ a:focus-visible {
   margin-bottom: 1.1rem;
 }
 .hero-note {
-  border-left: 4px solid var(--marigold);
-  padding: 0.25rem 0 0.25rem 1.25rem;
-  color: var(--muted);
-  font-style: italic;
+  background: var(--bg-soft);
+  border-radius: 14px;
+  padding: 1.25rem 1.4rem;
+  color: var(--ink);
   font-size: 1rem;
 }
-.hero-note a { font-style: normal; }
 
-/* ---------- Section headings ---------- */
-.section { padding: 4rem 0; border-top: 1px solid var(--rule); }
+/* ---------- Sections ---------- */
+.section { padding: 4rem 0; }
 .section h2 {
   font-family: var(--display);
-  font-weight: 400;
+  font-weight: 700;
   font-size: clamp(2rem, 4vw, 2.75rem);
-  line-height: 1.15;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
   margin-bottom: 2rem;
 }
 
-/* ---------- Work index (magazine contents list) ---------- */
+/* ---------- Work list ---------- */
 .work-list { list-style: none; }
-.work-list li { border-top: 1px solid var(--rule); }
-.work-list li:last-child { border-bottom: 1px solid var(--rule); }
+.work-list li { border-top: 2px solid var(--rule); }
+.work-list li:last-child { border-bottom: 2px solid var(--rule); }
 .work-list a {
   display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr) 9rem;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr) 10rem;
   gap: 2rem;
   padding: 2rem 0;
   color: var(--ink);
@@ -135,43 +141,44 @@ a:focus-visible {
 }
 .work-title {
   font-family: var(--display);
-  font-size: clamp(1.5rem, 3vw, 2.1rem);
+  font-weight: 700;
+  font-size: clamp(1.4rem, 3vw, 2rem);
   line-height: 1.2;
+  letter-spacing: -0.015em;
 }
 .work-desc { color: var(--muted); font-size: 1rem; line-height: 1.6; }
-.work-meta { font-size: 0.95rem; font-style: italic; color: var(--muted); text-align: right; }
-.work-list a:hover .work-title,
-.work-list a:focus-visible .work-title {
-  color: var(--oxblood);
-  text-decoration: underline;
-  text-decoration-color: var(--marigold);
-  text-decoration-thickness: 3px;
-  text-underline-offset: 6px;
+.work-meta {
+  font-family: var(--display);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--purple);
+  text-align: right;
 }
+.work-list a:hover .work-title,
+.work-list a:focus-visible .work-title { color: var(--purple); }
 
 /* ---------- On the side ---------- */
 .side {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
   gap: 3rem;
-  background: var(--paper-deep);
+  background: var(--bg-soft);
   padding: 3rem;
-  border-radius: 4px;
+  border-radius: 20px;
 }
 .side h2 { margin-bottom: 0; }
 .side p { max-width: 38rem; margin-bottom: 1rem; }
 
 /* ---------- Footer / contact ---------- */
-.site-footer {
-  padding: 5rem 0 3rem;
-  border-top: 1px solid var(--rule);
-}
+.site-footer { padding: 5rem 0 3rem; }
 .site-footer h2 {
   font-family: var(--display);
-  font-weight: 400;
-  font-size: clamp(2.5rem, 6vw, 4.5rem);
-  line-height: 1.05;
-  margin-bottom: 1.25rem;
+  font-weight: 700;
+  font-size: clamp(2.75rem, 7vw, 5rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--purple);
+  margin-bottom: 1.5rem;
 }
 .contact-links {
   display: flex;
@@ -179,6 +186,8 @@ a:focus-visible {
   gap: 1.5rem 2.5rem;
   list-style: none;
   margin-bottom: 3rem;
+  font-family: var(--display);
+  font-weight: 500;
 }
 .fineprint { font-size: 0.9rem; color: var(--muted); }
 
