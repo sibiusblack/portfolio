@@ -51,12 +51,17 @@ a:focus-visible {
 
 /* ---------- Header and navigation ---------- */
 .site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--bg);
+  border-bottom: 1px solid var(--rule);
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   gap: 1rem;
-  padding: 1.75rem 0 1.25rem;
+  padding: 1.25rem 0;
 }
 .wordmark {
   font-family: var(--display);
