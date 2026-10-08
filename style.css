@@ -104,20 +104,46 @@ a:focus-visible {
 .hero h1 {
   font-family: var(--display);
   font-weight: 600;
-  font-size: clamp(3.5rem, 8vw, 6rem);
+  font-size: clamp(3.25rem, 7vw, 5.25rem);
   line-height: 0.9;
   letter-spacing: -0.015em;
   color: var(--ink);
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.9rem;
 }
-.hero-lede {
-  font-size: clamp(1.2rem, 2vw, 1.45rem);
-  line-height: 1.55;
-  max-width: 30rem;
+.entry-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.4rem 1rem;
+  margin-bottom: 1.5rem;
+  font-family: var(--display);
+  font-size: clamp(1.2rem, 2vw, 1.4rem);
+  color: var(--muted);
+}
+.tamil {
+  font-family: "Noto Serif Tamil", var(--display);
+  font-weight: 500;
   color: var(--ink);
 }
+.pron { color: var(--purple); }
+.pos { font-style: italic; }
+
+.definitions {
+  max-width: 32rem;
+  padding-left: 1.6rem;
+  font-size: clamp(1.1rem, 1.8vw, 1.3rem);
+  line-height: 1.55;
+  color: var(--ink);
+}
+.definitions li { padding-left: 0.35rem; margin-bottom: 0.6rem; }
+.definitions li::marker {
+  font-family: var(--display);
+  font-weight: 600;
+  color: var(--purple);
+}
+
 .hero-location {
-  margin-top: 1rem;
+  margin-top: 0.75rem;
   font-size: 0.95rem;
   color: var(--muted);
 }
