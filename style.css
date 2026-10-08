@@ -148,58 +148,84 @@ a:focus-visible {
   color: var(--muted);
 }
 
-/* ---------- Opening-lines card ---------- */
-.first-lines { max-width: 32rem; margin-top: 1.75rem; perspective: 900px; }
-.first-lines-label {
-  font-size: 0.9rem;
-  color: var(--muted);
-  margin-bottom: 0.6rem;
+/* ---------- Opening-lines box ---------- */
+.first-lines {
+  max-width: 32rem;
+  margin-top: 3rem;
+  padding: 1.1rem 0 1.4rem;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  perspective: 900px;
 }
+.first-lines-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.first-lines-label { font-size: 0.85rem; color: var(--muted); }
 .line-card {
   margin: 0;
-  min-height: 7.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background: var(--bg-soft);
-  border-radius: 14px;
-  padding: 1.25rem 1.5rem;
+  min-height: 6.5rem;
   transform-origin: 50% 50%;
   transition: transform 0.3s ease-in, opacity 0.3s ease-in;
 }
 .line-card.is-flipping { transform: rotateX(90deg); opacity: 0.2; }
+
+/* the quote itself */
 .line-text {
   font-family: var(--display);
   font-style: italic;
-  font-size: clamp(1.15rem, 1.8vw, 1.3rem);
-  line-height: 1.45;
+  font-weight: 500;
+  font-size: clamp(1.25rem, 2vw, 1.45rem);
+  line-height: 1.4;
   color: var(--ink);
 }
-.line-text::before { content: "\201C"; }
-.line-text::after { content: "\201D"; }
-.line-text[lang="ta"] { font-family: "Noto Serif Tamil", var(--display); font-style: normal; font-size: 1.05rem; }
+.line-text::before { content: "\201C"; color: var(--purple); }
+.line-text::after { content: "\201D"; color: var(--purple); }
+.line-text[lang="ta"] { font-family: "Noto Serif Tamil", var(--display); font-style: normal; font-size: 1.1rem; }
+
+/* author and book, set apart from the quote */
 .line-source {
-  margin-top: 0.6rem;
-  font-size: 0.85rem;
-  color: var(--muted);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.25rem 0.75rem;
+  margin-top: 0.9rem;
 }
-.line-source cite { font-style: italic; }
-.line-next {
-  margin-top: 0.6rem;
-  background: none;
-  border: none;
-  padding: 0.25rem 0;
-  font: inherit;
-  font-size: 0.9rem;
+.line-source::before {
+  content: "\00B6";
   color: var(--purple);
-  text-decoration: underline;
-  text-decoration-color: var(--lilac);
-  text-decoration-thickness: 2px;
-  text-underline-offset: 4px;
-  cursor: pointer;
+  font-family: var(--display);
+  font-size: 1.1rem;
 }
-.line-next:hover { color: var(--purple-deep); text-decoration-color: var(--purple); }
-.line-next:focus-visible { outline: 3px solid var(--purple); outline-offset: 3px; border-radius: 4px; }
+.line-author {
+  font-family: var(--body);
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: var(--ink);
+}
+.line-book {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--purple);
+}
+
+.line-next {
+  background: none;
+  border: 1.5px solid var(--lilac);
+  border-radius: 999px;
+  padding: 0.3rem 0.9rem;
+  font: inherit;
+  font-size: 0.85rem;
+  color: var(--purple);
+  cursor: pointer;
+  white-space: nowrap;
+}
+.line-next:hover { border-color: var(--purple); background: #FFFFFF; }
+.line-next:focus-visible { outline: 3px solid var(--purple); outline-offset: 3px; }
 
 /* ---------- Button ---------- */
 .button {
