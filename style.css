@@ -8,6 +8,7 @@
   --purple-deep: #4B2A9E;
   --lilac: #C9B8F2;
   --rule: #E1D9F2;
+
   --display: "EB Garamond", Garamond, Georgia, serif;
   --body: "DM Sans", "Segoe UI", Arial, sans-serif;
 }
@@ -147,8 +148,8 @@ a:focus-visible {
   color: var(--muted);
 }
 
-/* ---------- Opening-lines box ---------- */
-.first-lines {
+/* ---------- Numbers flip card ---------- */
+.numbers-box {
   max-width: 32rem;
   margin-top: 3rem;
   padding: 1.1rem 0 1.4rem;
@@ -156,63 +157,69 @@ a:focus-visible {
   border-bottom: 1px solid var(--rule);
   perspective: 900px;
 }
-.first-lines-head {
+.numbers-head {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
   gap: 1rem;
   margin-bottom: 1rem;
 }
-.first-lines-label { font-size: 0.85rem; color: var(--muted); }
-.line-card {
+.numbers-label { font-size: 0.85rem; color: var(--muted); }
+.number-card {
   margin: 0;
-  min-height: 6.5rem;
+  min-height: 7rem;
   transform-origin: 50% 50%;
   transition: transform 0.3s ease-in, opacity 0.3s ease-in;
 }
-.line-card.is-flipping { transform: rotateX(90deg); opacity: 0.2; }
+.number-card.is-flipping { transform: rotateX(90deg); opacity: 0.2; }
 
-/* the quote itself */
-.line-text {
+/* the number as a drop cap, with its description wrapping beside it */
+.number-body {
   font-family: var(--display);
-  font-style: italic;
-  font-weight: 500;
   font-size: clamp(1.25rem, 2vw, 1.45rem);
-  line-height: 1.4;
+  line-height: 1.35;
   color: var(--ink);
 }
-.line-text::before { content: "\201C"; color: var(--purple); }
-.line-text::after { content: "\201D"; color: var(--purple); }
-.line-text[lang="ta"] { font-family: "Noto Serif Tamil", var(--display); font-style: normal; font-size: 1.1rem; }
+.number-body::after { content: ""; display: block; clear: both; }
+.number-cap {
+  float: left;
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 4.25rem;
+  line-height: 0.82;
+  font-variant-numeric: lining-nums;
+  color: var(--purple);
+  padding: 0.3rem 0.85rem 0 0;
+}
 
-/* author and book, set apart from the quote */
-.line-source {
+/* company and project, styled like author and book */
+.number-source {
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
   gap: 0.25rem 0.75rem;
   margin-top: 0.9rem;
 }
-.line-source::before {
+.number-source::before {
   content: "\00B6";
   color: var(--purple);
   font-family: var(--display);
   font-size: 1.1rem;
 }
-.line-author {
+.number-company {
   font-family: var(--body);
   font-weight: 500;
   font-size: 0.9rem;
   color: var(--ink);
 }
-.line-book {
+.number-project {
   font-family: var(--display);
   font-style: italic;
   font-size: 1.05rem;
   color: var(--purple);
 }
 
-.line-next {
+.numbers-next {
   background: none;
   border: 1.5px solid var(--lilac);
   border-radius: 999px;
@@ -223,8 +230,8 @@ a:focus-visible {
   cursor: pointer;
   white-space: nowrap;
 }
-.line-next:hover { border-color: var(--purple); background: #FFFFFF; }
-.line-next:focus-visible { outline: 3px solid var(--purple); outline-offset: 3px; }
+.numbers-next:hover { border-color: var(--purple); background: #FFFFFF; }
+.numbers-next:focus-visible { outline: 3px solid var(--purple); outline-offset: 3px; }
 
 /* ---------- Button ---------- */
 .button {
@@ -280,53 +287,6 @@ a:focus-visible {
 .about-body { max-width: 42rem; }
 .about-body p { margin-bottom: 1.1rem; }
 .about-body p:first-child { font-size: 1.2rem; line-height: 1.6; }
-
-/* ---------- Numbers ---------- */
-.stats {
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1rem;
-  margin-bottom: 3rem;
-}
-.stats li {
-  display: flex;
-  flex-direction: column;
-  background: var(--bg-soft);
-  border-radius: 16px;
-  padding: 1.5rem 1.25rem;
-}
-.stat-num {
-  display: block;
-  font-family: var(--display);
-  font-weight: 600;
-  font-size: clamp(2rem, 4vw, 2.75rem);
-  line-height: 1;
-  font-variant-numeric: lining-nums;
-  color: var(--purple);
-  margin-bottom: 0.5rem;
-}
-.stat-label { font-size: 1rem; color: var(--ink); line-height: 1.4; display: block; margin-bottom: 1.25rem; }
-.stat-tag {
-  margin-top: auto;
-  padding-top: 0.75rem;
-  border-top: 1px solid var(--lilac);
-  display: flex;
-  flex-direction: column;
-  gap: 0.1rem;
-}
-.stat-company {
-  font-family: var(--body);
-  font-weight: 500;
-  font-size: 0.82rem;
-  color: var(--ink);
-}
-.stat-project {
-  font-family: var(--display);
-  font-style: italic;
-  font-size: 1rem;
-  color: var(--purple);
-}
 
 /* ---------- Skills, grouped ---------- */
 .skill-groups {
@@ -472,7 +432,6 @@ a:focus-visible {
   .portrait { justify-self: center; max-width: 18rem; }
   .work-list summary { grid-template-columns: minmax(0, 1fr) 2rem; gap: 0.25rem 1rem; }
   .work-meta { grid-row: 2; }
-  .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .skill-groups { grid-template-columns: 1fr; gap: 2rem; }
   .tools { flex-direction: column; align-items: flex-start; }
   .side { grid-template-columns: 1fr; gap: 1rem; padding: 2rem 1.5rem; }
@@ -482,5 +441,5 @@ a:focus-visible {
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .line-card { transition: none; }
+  .number-card { transition: none; }
 }
