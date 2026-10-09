@@ -688,6 +688,7 @@ a:focus-visible {
   margin-bottom: 2rem;
 }
 .gallery-set .gallery-frame { aspect-ratio: 4 / 5; }
+.gallery-set--pages .gallery-frame { aspect-ratio: 1000 / 1415; }
 .gallery-set--stories .gallery-frame { aspect-ratio: 9 / 16; border-radius: 16px; }
 .gallery-tag {
   display: inline-block;
