@@ -521,6 +521,15 @@ a:focus-visible {
 .more-list .work-attr { margin-bottom: 0.3rem; }
 .more-list p { font-size: 0.95rem; max-width: 42rem; }
 .more-list a { font-weight: 500; white-space: nowrap; }
+.more-links { display: flex; flex-direction: column; align-items: flex-end; gap: 0.35rem; }
+.more-links-label { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+.more-gallery-open {
+  font: inherit; font-weight: 500; color: var(--purple); background: none; border: none; padding: 0;
+  cursor: pointer; text-decoration: underline; text-decoration-color: var(--lilac);
+  text-decoration-thickness: 2px; text-underline-offset: 4px; white-space: nowrap;
+}
+.more-gallery-open:hover { text-decoration-color: var(--purple); }
+.more-gallery-open:focus-visible { outline: 3px solid var(--purple); outline-offset: 3px; }
 
 /* ---------- Case study pages ---------- */
 .cs { padding: 2rem 0 1rem; }
@@ -936,6 +945,8 @@ body.lightbox-open { overflow: hidden; }
   .portrait { justify-self: center; max-width: 18rem; }
   .work-grid { grid-template-columns: 1fr; }
   .more-list li { grid-template-columns: 1fr; gap: 0.5rem; }
+  .more-links { align-items: flex-start; flex-direction: row; flex-wrap: wrap; gap: 0.4rem 1.25rem; }
+  .more-links-label { width: 100%; }
   .cs-hero { grid-template-columns: 1fr; gap: 1.75rem; }
   .case-glance { grid-template-columns: 1fr 1fr; }
   .cs-section { grid-template-columns: 1fr; padding: 2rem 0; }
