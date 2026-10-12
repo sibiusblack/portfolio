@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;1,400&family=EB+Garamond:ital,wght@0,500;0,600;1,500&family=Noto+Serif+Tamil:wght@500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=40">
+  <link rel="stylesheet" href="style.css?v=41">
 </head>
 <body>
 
@@ -183,7 +183,7 @@
         </div>
  
         <p class="more-label">More work</p>
-        <ul class="more-list">
+                <ul class="more-list">
           <li>
             <div>
               <span class="more-title">Grant, sponsorship, and promotional writing for a family music festival</span>
@@ -191,7 +191,7 @@
               <p>Wrote grant proposal sections, sponsor pitches, and promotional copy for a fundraiser that pairs live music with online digital safety, working with marketing, design, and creative teams to keep one voice across every piece.</p>
             </div>
             <div class="more-links">
-              <a href="https://sparkandpow-rfest.com/" target="_blank" rel="noopener">The festival &rarr;</a>
+              <a class="more-btn" href="https://sparkandpow-rfest.com/" target="_blank" rel="noopener">The festival <span class="more-arrow" aria-hidden="true">&rarr;</span></a>
             </div>
           </li>
           <li>
@@ -201,8 +201,11 @@
               <p>New pages and rewrites for 20+ cities, each built on keyword research and careful fact-checking.</p>
             </div>
             <div class="more-links">
-              <a href="https://www.herculaneumtickets.com/" target="_blank" rel="noopener">Herculaneum &rarr;</a>
-              <a href="https://www.paristickets.com/chocolate-museum/" target="_blank" rel="noopener">Chocolate Museum, Paris &rarr;</a>
+              <button type="button" class="more-btn more-toggle" aria-expanded="false">See the work (2) <span class="more-arrow" aria-hidden="true">&darr;</span></button>
+              <div class="more-menu" hidden>
+                <a href="https://www.herculaneumtickets.com/" target="_blank" rel="noopener">Herculaneum</a>
+                <a href="https://www.paristickets.com/chocolate-museum/" target="_blank" rel="noopener">Chocolate Museum, Paris</a>
+              </div>
             </div>
           </li>
           <li>
@@ -212,10 +215,12 @@
               <p>Planned the calendar, wrote captions and reel scripts, interviewed founders, and shaped long-form videos into reels and shorts. The content buckets I created, from reading recommendations to founder mantras, continued after I moved on.</p>
             </div>
             <div class="more-links">
-              <span class="more-links-label">Examples</span>
-              <a href="https://www.instagram.com/p/Cxw2L4NMaJn/" target="_blank" rel="noopener">Post one &rarr;</a>
-              <a href="https://www.instagram.com/p/DBQnNruyfzd/" target="_blank" rel="noopener">Post two &rarr;</a>
-              <a href="https://www.instagram.com/p/DIQpJwFo_wG/" target="_blank" rel="noopener">Post three &rarr;</a>
+              <button type="button" class="more-btn more-toggle" aria-expanded="false">See the work (3) <span class="more-arrow" aria-hidden="true">&darr;</span></button>
+              <div class="more-menu" hidden>
+                <a href="https://www.instagram.com/p/Cxw2L4NMaJn/" target="_blank" rel="noopener">Post one</a>
+                <a href="https://www.instagram.com/p/DBQnNruyfzd/" target="_blank" rel="noopener">Post two</a>
+                <a href="https://www.instagram.com/p/DIQpJwFo_wG/" target="_blank" rel="noopener">Post three</a>
+              </div>
             </div>
           </li>
           <li>
@@ -225,9 +230,12 @@
               <p>Wrote the full website for Adavi, a Soliga community brand bringing forest produce to market, and key pages for Chiratae Ventures, from the firm's story to its ESG commitments.</p>
             </div>
             <div class="more-links">
-              <a href="https://adavi.co.in/about-us/" target="_blank" rel="noopener">Adavi &rarr;</a>
-              <a href="https://www.chiratae.com/about-us/" target="_blank" rel="noopener">Chiratae, About &rarr;</a>
-              <a href="https://www.chiratae.com/esg-impact/" target="_blank" rel="noopener">Chiratae, ESG &rarr;</a>
+              <button type="button" class="more-btn more-toggle" aria-expanded="false">See the work (3) <span class="more-arrow" aria-hidden="true">&darr;</span></button>
+              <div class="more-menu" hidden>
+                <a href="https://adavi.co.in/about-us/" target="_blank" rel="noopener">Adavi</a>
+                <a href="https://www.chiratae.com/about-us/" target="_blank" rel="noopener">Chiratae Ventures, About</a>
+                <a href="https://www.chiratae.com/esg-impact/" target="_blank" rel="noopener">Chiratae Ventures, ESG</a>
+              </div>
             </div>
           </li>
           <li>
@@ -237,7 +245,7 @@
               <p>Turned research on 24 heritage sites into voiceover and conversational stories, and was named Star Performer of the Month in September 2022.</p>
             </div>
             <div class="more-links">
-              <button type="button" class="more-gallery-open">View samples &rarr;</button>
+              <button type="button" class="more-btn more-gallery-open">View samples <span class="more-arrow" aria-hidden="true">&rarr;</span></button>
             </div>
             <!-- Heritage Map samples: shown in the pop-up gallery -->
             <div class="more-gallery" hidden>
@@ -320,15 +328,41 @@
     })();
   </script>
 
-    <script src="gallery.js"></script>
+  <script src="gallery.js"></script>
   <script>
-    // "View samples" buttons open the hidden gallery in the pop-up viewer
+    // More work: "View samples" opens the pop-up gallery
     document.querySelectorAll('.more-gallery-open').forEach(function (btn) {
       btn.addEventListener('click', function () {
         var first = btn.closest('li').querySelector('.more-gallery .gallery-frame');
         if (first) first.click();
       });
     });
+    // More work: "See the work" drop-downs
+    (function () {
+      var toggles = document.querySelectorAll('.more-toggle');
+      function closeAll() {
+        toggles.forEach(function (t) {
+          t.setAttribute('aria-expanded', 'false');
+          t.nextElementSibling.hidden = true;
+        });
+      }
+      toggles.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var wasOpen = btn.getAttribute('aria-expanded') === 'true';
+          closeAll();
+          if (!wasOpen) {
+            btn.setAttribute('aria-expanded', 'true');
+            btn.nextElementSibling.hidden = false;
+          }
+        });
+      });
+      document.addEventListener('click', function (e) {
+        if (!e.target.closest('.more-links')) closeAll();
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeAll();
+      });
+    })();
   </script>
   
 </body>
