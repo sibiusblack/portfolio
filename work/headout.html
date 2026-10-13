@@ -23,7 +23,8 @@
           <li><a href="../index.html#about">About</a></li>
           <li><a href="../index.html#skills">Skills</a></li>
           <li><a href="../index.html#work" aria-current="page">Work</a></li>
-          <li><a href="../index.html#personal">Writing</a></li>
+          <li><a href="../index.html#personal">Off the clock</a></li>
+          <li><a href="../assets/resume.pdf" target="_blank" rel="noopener">Resume</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
@@ -133,8 +134,8 @@ Measured against the period before the update.</span></li>
 
       <!-- Previous / next -->
       <nav class="cs-pager" aria-label="More case studies">
-        <a href="mcrc-annual-report.html" class="cs-pager-link"><img class="cs-pager-thumb" src="../assets/mcrc-cover.jpg" alt=""><span class="cs-pager-text"><span class="cs-pager-dir">&larr; Previous</span><span class="cs-pager-title">Giving a year of research its voice</span><span class="cs-pager-attr">Panorbit &middot; <cite>MCRC Annual Report</cite></span></span></a>
-        <a href="the-ultimate-pitch.html" class="cs-pager-link cs-pager-next"><img class="cs-pager-thumb" src="../assets/pitch-cover.jpg" alt=""><span class="cs-pager-text"><span class="cs-pager-dir">Next &rarr;</span><span class="cs-pager-title">A campaign for a national B-school competition</span><span class="cs-pager-attr">Panorbit &middot; <cite>Reliance's The Ultimate Pitch</cite></span></span></a>
+        <a href="mcrc-annual-report.html" class="cs-pager-link"><img class="cs-pager-thumb" src="../assets/mcrc-cover.jpg" alt=""><span class="cs-pager-text"><span class="cs-pager-dir">&larr; Previous</span><span class="cs-pager-title">Giving a year of research its voice</span><span class="cs-pager-attr">Panorbit &middot; <cite>MCRC Annual Report 2023-24</cite></span></span></a>
+        <a href="the-ultimate-pitch.html" class="cs-pager-link cs-pager-next"><img class="cs-pager-thumb" src="../assets/pitch-cover.jpg" alt=""><span class="cs-pager-text"><span class="cs-pager-dir">Next &rarr;</span><span class="cs-pager-title">A campaign for a B-school competition</span><span class="cs-pager-attr">Panorbit &middot; <cite>Reliance's The Ultimate Pitch</cite></span></span></a>
       </nav>
     </main>
 
@@ -143,7 +144,8 @@ Measured against the period before the update.</span></li>
       <div class="contact-card contact-card--compact">
         <h2>Let's talk.</h2>
         <div class="contact-email-row">
-          <a class="contact-email" href="mailto:bsibiraj31@gmail.com">bsibiraj31@gmail.com</a>
+          <a class="contact-email" href="mailto:YOUR-EMAIL@example.com">YOUR-EMAIL@example.com</a>
+          <button type="button" class="contact-copy" data-copy="YOUR-EMAIL@example.com">Copy</button>
         </div>
         <p class="contact-links">
           <a href="https://www.linkedin.com/in/sibiraj-balasubramaniam" target="_blank" rel="noopener">LinkedIn <span aria-hidden="true">&nearr;</span></a>
@@ -154,7 +156,19 @@ Measured against the period before the update.</span></li>
       <p class="fineprint">&copy; 2026 Sibiraj. All rights reserved. Last updated October 2026.</p>
     </footer>
   </div>
-       
+
+    <script>
+    // Contact: copy email to clipboard
+    document.querySelectorAll('.contact-copy').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var text = btn.getAttribute('data-copy');
+        var done = function () { btn.textContent = 'Copied'; setTimeout(function () { btn.textContent = 'Copy'; }, 2000); };
+        if (navigator.clipboard) { navigator.clipboard.writeText(text).then(done, function () { window.prompt('Copy this email:', text); }); }
+        else { window.prompt('Copy this email:', text); }
+      });
+    });
+  </script>
+  
   <script src="../gallery.js"></script>
 
 </body>
