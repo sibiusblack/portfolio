@@ -194,6 +194,7 @@ a:focus-visible {
 /* the description, set like the quote used to be */
 .number-text {
   align-self: center;
+  min-height: 2.6em;
   font-family: var(--display);
   font-style: italic;
   font-weight: 500;
