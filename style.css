@@ -305,9 +305,8 @@ a:focus-visible {
 /* ---------- Sectors card ---------- */
 .sectors-band {
   display: flex;
-  align-items: baseline;
-  flex-wrap: wrap;
-  gap: 0.5rem 1.5rem;
+  flex-direction: column;
+  gap: 0.35rem;
   background: #FFFFFF;
   border: 1px solid var(--rule);
   border-left: 4px solid var(--purple);
@@ -329,7 +328,7 @@ a:focus-visible {
   min-width: 16rem;
   font-family: var(--display);
   font-weight: 500;
-  font-size: clamp(1rem, 1.3vw, 1rem);
+  font-size: clamp(1.1rem, 1.5vw, 1.2rem);
   line-height: 1.45;
   color: var(--ink);
 }
