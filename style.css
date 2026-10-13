@@ -330,7 +330,7 @@ a:focus-visible {
   min-width: 0;
   font-family: var(--display);
   font-weight: 500;
-  font-size: clamp(1.05rem, 1.95cqi, 1.25rem);
+  font-size: clamp(1.05rem, 1.85cqi, 1.25rem);
   line-height: 1.45;
   color: var(--ink);
 }
