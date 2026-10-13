@@ -375,6 +375,9 @@ a:focus-visible {
   font-weight: 500;
   color: var(--ink);
 }
+.skill-cert { grid-column: 2; margin-top: -0.4rem; font-size: 0.9rem; color: var(--muted); }
+.skill-cert a { color: inherit; text-decoration-color: var(--lilac); }
+.skill-cert a:hover { color: var(--purple); }
 /* highlighter-pen effect behind each skill */
 .skill-items li span {
   background: linear-gradient(transparent 38%, #E0D4FA 38%, #E0D4FA 96%, transparent 96%);
@@ -1011,6 +1014,7 @@ a.shelf-feature:hover, a.shelf-card:hover { transform: translateY(-3px); box-sha
   .cs-pager { grid-template-columns: 1fr; }
   .cs-pager-next { text-align: left; }
   .skill-row { grid-template-columns: 1fr; gap: 0.6rem; padding: 1.3rem 0; }
+  .skill-cert { grid-column: 1; margin-top: 0; }
   .side-head { grid-template-columns: 1fr; gap: 1rem; }
   .shelf { grid-template-columns: 1fr; }
   .shelf-feature { grid-column: auto; grid-row: auto; padding: 2rem 1.5rem; }  .site-nav ul { gap: 1.25rem; }
