@@ -925,9 +925,10 @@ body.lightbox-open { overflow: hidden; }
 .cs-pager-next { text-align: right; }
 
 /* ---------- On the side ---------- */
-.side-head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: 3rem; align-items: end; margin-bottom: 2rem; }
-.side-head h2 { margin-bottom: 0; }
-.side-head p { max-width: 38rem; }
+.side-head { margin-bottom: 2rem; }
+.side-head h2 { margin-bottom: 0.75rem; }
+.side-head p { max-width: 40rem; font-size: 1.1rem; color: var(--muted); }
+.side-head em { color: var(--purple); }
 .shelf { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; }
 .shelf-feature, .shelf-card {
   display: flex; flex-direction: column; gap: 0.6rem;
@@ -942,7 +943,7 @@ body.lightbox-open { overflow: hidden; }
 a.shelf-feature:hover, a.shelf-card:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(42, 31, 74, 0.1); color: inherit; }
 .shelf-feature:hover { color: #FFFFFF; }
 .shelf-form { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--purple); }
-.shelf-feature .shelf-form { color: var(--lilac); }
+.shelf-feature .shelf-form { color: var(--lilac); margin-bottom: auto; }
 .shelf-quote { font-family: var(--display); font-style: italic; font-size: clamp(2.2rem, 4.4vw, 3.6rem); line-height: 1.05; margin: 0.5rem 0 1rem; }
 .shelf-title { font-family: var(--display); font-weight: 600; font-size: 1.3rem; line-height: 1.2; }
 .shelf-feature .shelf-title { font-size: 1.15rem; font-weight: 500; opacity: 0.9; }
@@ -1020,7 +1021,6 @@ a.shelf-feature:hover, a.shelf-card:hover { transform: translateY(-3px); box-sha
   .cs-pager-next { text-align: left; }
   .skill-row { grid-template-columns: 1fr; gap: 0.6rem; padding: 1.3rem 0; }
   .skill-cert { grid-column: 1; margin-top: 0; }
-  .side-head { grid-template-columns: 1fr; gap: 1rem; }
   .shelf { grid-template-columns: 1fr; }
   .shelf-feature { grid-column: auto; grid-row: auto; padding: 2rem 1.5rem; }  .site-nav ul { gap: 1.25rem; }
   html { scroll-padding-top: 8rem; }
