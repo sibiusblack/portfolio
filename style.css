@@ -304,9 +304,11 @@ a:focus-visible {
 
 /* ---------- Sectors card ---------- */
 .sectors-band {
+  container-type: inline-size;
   display: flex;
-  flex-direction: column;
-  gap: 0.35rem;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.25rem;
   background: #FFFFFF;
   border: 1px solid var(--rule);
   border-left: 4px solid var(--purple);
@@ -324,13 +326,19 @@ a:focus-visible {
   color: var(--purple);
 }
 .sectors {
+  flex: 1;
+  min-width: 0;
   font-family: var(--display);
   font-weight: 500;
-  font-size: clamp(1.1rem, 1.5vw, 1.2rem);
+  font-size: clamp(1.05rem, 1.95cqi, 1.25rem);
   line-height: 1.45;
   color: var(--ink);
 }
 .sectors span { color: var(--purple); font-style: italic; }
+@media (min-width: 900px) {
+  .sectors-band { flex-wrap: nowrap; }
+  .sectors { white-space: nowrap; }
+}
 
 /* ---------- Skills and tools ---------- */
 .skill-table { border-top: 1px solid var(--rule); }
