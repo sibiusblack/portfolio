@@ -927,7 +927,7 @@ body.lightbox-open { overflow: hidden; }
 /* ---------- On the side ---------- */
 .side-head { margin-bottom: 2rem; }
 .side-head h2 { margin-bottom: 0.75rem; }
-.side-head p { max-width: 40rem; font-size: 1.1rem; color: var(--muted); }
+.side-head p { max-width: 62rem; font-size: 1.1rem; color: var(--muted); }
 .side-head em { color: var(--purple); }
 .shelf { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; }
 .shelf-feature, .shelf-card {
