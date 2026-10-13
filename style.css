@@ -504,12 +504,12 @@ a:focus-visible {
 .read-more:hover { background: var(--purple-deep); color: #FFFFFF; }
 
 .more-label {
-  font-size: 0.75rem;
+  font-family: var(--display);
   font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin: 3rem 0 0.5rem;
+  font-size: 1.6rem;
+  line-height: 1.15;
+  color: var(--ink);
+  margin: 4rem 0 1rem;
 }
 .more-list { list-style: none; border-top: 1px solid var(--rule); }
 .more-list li {
