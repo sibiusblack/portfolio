@@ -994,6 +994,10 @@ a.shelf-feature:hover, a.shelf-card:hover { transform: translateY(-3px); box-sha
 }
 .contact-copy:hover { background: rgba(255, 255, 255, 0.12); border-color: #FFFFFF; }
 .contact-copy:focus-visible, .contact-links a:focus-visible, .contact-email:focus-visible { outline: 3px solid var(--lilac); outline-offset: 3px; }
+.contact-card--compact { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; column-gap: 3rem; padding: 2.5rem 3rem; }
+.contact-card--compact h2 { margin-bottom: 0; grid-row: span 2; }
+.contact-card--compact .contact-email-row { padding-top: 0; border-top: none; margin-bottom: 0.6rem; }
+.contact-card--compact .contact-email { font-size: clamp(1.4rem, 2.6vw, 1.9rem); }
 .contact-links { display: flex; flex-wrap: wrap; gap: 0.5rem 1.75rem; }
 .contact-links a { color: #FFFFFF; font-weight: 500; text-decoration: underline; text-decoration-color: var(--lilac); text-underline-offset: 4px; }
 .contact-links a:hover { color: #FFFFFF; text-decoration-color: #FFFFFF; }
@@ -1037,6 +1041,8 @@ a.shelf-feature:hover, a.shelf-card:hover { transform: translateY(-3px); box-sha
   .shelf-feature { grid-column: auto; grid-row: auto; padding: 2rem 1.5rem; }  .site-nav ul { gap: 1.25rem; }
   html { scroll-padding-top: 8rem; }
   .contact-card { padding: 2.25rem 1.5rem; border-radius: 18px; }
+  .contact-card--compact { grid-template-columns: 1fr; row-gap: 1rem; }
+  .contact-card--compact h2 { grid-row: auto; }
 }
 
 @media (prefers-reduced-motion: reduce) {
