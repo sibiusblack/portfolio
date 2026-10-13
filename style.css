@@ -952,24 +952,30 @@ a.shelf-feature:hover, a.shelf-card:hover { transform: translateY(-3px); box-sha
 .shelf-follow .more-links-label { margin-right: 0.4rem; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
 
 /* ---------- Footer / contact ---------- */
-.site-footer { padding: 5rem 0 3rem; }
+.site-footer { padding: 4rem 0 2.5rem; margin-top: 2rem; border-top: 1px solid var(--rule); scroll-margin-top: 1rem; }
 .site-footer h2 {
   font-family: var(--display);
   font-weight: 600;
   font-size: clamp(2.25rem, 5vw, 3.4rem);
   line-height: 1;
   color: var(--purple);
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.6rem;
 }
-.contact-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem 2.5rem;
-  list-style: none;
-  margin-bottom: 3rem;
-  font-family: var(--body);
-  font-weight: 500;
+.footer-split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 3rem; align-items: start; margin-bottom: 3rem; }
+.see-also { font-family: var(--display); font-size: 1.25rem; color: var(--muted); margin-bottom: 1.5rem; }
+.see-also em { color: var(--purple); margin-right: 0.3rem; }
+.footer-note { max-width: 32rem; font-size: 1.05rem; }
+.contact-rows { list-style: none; border-top: 1px solid var(--rule); }
+.contact-rows a {
+  display: grid; grid-template-columns: 6rem minmax(0, 1fr) auto; align-items: center; gap: 1rem;
+  padding: 1.15rem 0.5rem; border-bottom: 1px solid var(--rule); text-decoration: none; color: var(--ink);
+  transition: background 0.2s ease;
 }
+.contact-rows a:hover { background: var(--bg-soft); color: var(--ink); }
+.contact-rows a:hover .contact-arrow { transform: translateX(4px); }
+.contact-label { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+.contact-value { font-family: var(--display); font-size: 1.35rem; overflow-wrap: anywhere; }
+.contact-arrow { color: var(--purple); font-size: 1.2rem; transition: transform 0.2s ease; }
 .fineprint { font-size: 0.9rem; color: var(--muted); }
 
 /* ---------- Mobile ---------- */
@@ -1009,6 +1015,9 @@ a.shelf-feature:hover, a.shelf-card:hover { transform: translateY(-3px); box-sha
   .shelf { grid-template-columns: 1fr; }
   .shelf-feature { grid-column: auto; grid-row: auto; padding: 2rem 1.5rem; }  .site-nav ul { gap: 1.25rem; }
   html { scroll-padding-top: 8rem; }
+  .footer-split { grid-template-columns: 1fr; gap: 1.5rem; }
+  .contact-rows a { grid-template-columns: 4.75rem minmax(0, 1fr) auto; }
+  .contact-value { font-size: 1.15rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
