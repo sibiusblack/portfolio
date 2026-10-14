@@ -57,16 +57,16 @@
               <p class="number-text">uplift in search-to-booking conversion</p>
               <figcaption class="number-source">
                 <span class="number-company">Headout</span>
-                <cite class="number-project">Ferrari Museum</cite>
+                <a class="number-link" href="work/headout.html"><cite class="number-project">Museo Ferrari</cite></a>
               </figcaption>
             </figure>
  
             <!-- The numbers. Add, remove or reorder <li> lines here. -->
             <ul class="number-list" hidden>
-              <li data-num="14%" data-company="Headout" data-project="Ferrari Museum">uplift in search-to-booking conversion</li>
-              <li data-num="155K+" data-company="Panorbit" data-project="Reliance's The Ultimate Pitch">campaign reach in two months</li>
-              <li data-num="120+" data-company="Headout" data-project="France and Italy market">travel experience pages written for search and booking</li>
-              <li data-num="24" data-company="India Lost and Found" data-project="Heritage Map of India">heritage sites turned into stories</li>
+              <li data-num="14%" data-company="Headout" data-project="Ferrari Museum" data-link="work/headout.html">uplift in search-to-booking conversion</li>
+              <li data-num="155K+" data-company="Panorbit" data-project="Reliance's The Ultimate Pitch" data-link="work/the-ultimate-pitch.html">campaign reach in two months</li>
+              <li data-num="120+" data-company="Headout" data-project="France and Italy market" data-link="#more-work">travel experience pages written for search and booking</li>
+              <li data-num="24" data-company="India Lost and Found" data-project="Heritage Map of India" data-link="#more-work">heritage sites turned into stories</li>
             </ul>
           </div>
         </div>
@@ -360,6 +360,7 @@
       var text = document.querySelector('.number-text');
       var company = document.querySelector('.number-company');
       var project = document.querySelector('.number-project');
+      var link = document.querySelector('.number-link');
       var button = document.querySelector('.numbers-next');
       var items = Array.prototype.slice.call(document.querySelectorAll('.number-list li'));
       if (!card || items.length < 2) return;
@@ -375,6 +376,7 @@
         text.textContent = li.textContent;
         company.textContent = li.dataset.company;
         project.textContent = li.dataset.project;
+        if (link) link.setAttribute('href', li.dataset.link || '#work');
       }
 
       function next() {
@@ -398,7 +400,9 @@
   </script>
 
   <script src="gallery.js"></script>
-  <script>
+  
+    <script>
+  
     // More work: "View samples" opens the pop-up gallery
     document.querySelectorAll('.more-gallery-open').forEach(function (btn) {
       btn.addEventListener('click', function () {
