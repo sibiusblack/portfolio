@@ -939,14 +939,31 @@ body.lightbox-open { overflow: hidden; }
 .side-head h2 { margin-bottom: 0.75rem; }
 .side-head p { max-width: 62rem; font-size: 1.1rem; color: var(--muted); }
 .side-head em { color: var(--purple); }
-.shelf { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; }
+.shelf {
+  display: flex; gap: 1.25rem;
+  overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; -webkit-overflow-scrolling: touch;
+  padding: 0.25rem 0 1rem; scrollbar-width: none;
+}
+.shelf::-webkit-scrollbar { display: none; }
+.shelf > * { flex: 0 0 calc((100% - 2.5rem) / 3.15); scroll-snap-align: start; }
+.shelf > .shelf-feature { flex-basis: calc((100% - 2.5rem) / 1.9); }
+.shelf-nav { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-top: 0.25rem; }
+.shelf-arrows { display: flex; gap: 0.5rem; }
+.shelf-arrow {
+  width: 2.5rem; height: 2.5rem; border-radius: 50%; display: inline-grid; place-items: center;
+  font: inherit; font-size: 1.1rem; color: var(--purple); background: #FFFFFF;
+  border: 1.5px solid var(--lilac); cursor: pointer; transition: background 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
+}
+.shelf-arrow:hover { border-color: var(--purple); background: var(--bg-soft); }
+.shelf-arrow:disabled { opacity: 0.35; cursor: default; }
+.shelf-arrow:focus-visible { outline: 3px solid var(--purple); outline-offset: 3px; }
 .shelf-feature, .shelf-card {
   display: flex; flex-direction: column; gap: 0.6rem;
   border-radius: 16px; padding: 1.75rem; text-decoration: none; color: var(--ink);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 .shelf-feature {
-  grid-column: span 2; grid-row: span 2; justify-content: flex-end;
+  justify-content: flex-end;
   background: var(--purple-deep); color: #FFFFFF; padding: 2.5rem;
 }
 .shelf-card { background: #FFFFFF; border: 1px solid var(--rule); }
@@ -971,6 +988,7 @@ a.shelf-feature:hover, a.shelf-card:hover { transform: translateY(-3px); box-sha
 .pill-icon--wide { width: 1.3em; }
 .shelf-follow { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem; margin-top: 1.75rem; }
 .shelf-follow .more-links-label { margin-right: 0.4rem; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+.shelf-hint { font-size: 0.8rem; color: var(--muted); }
 
 /* ---------- Footer / contact ---------- */
 .site-footer { padding: 4rem 0 2.5rem; scroll-margin-top: 1rem; }
@@ -1042,8 +1060,11 @@ a.shelf-feature:hover, a.shelf-card:hover { transform: translateY(-3px); box-sha
   .cs-pager-next .cs-pager-thumb { order: 0; }
   .skill-row { grid-template-columns: 1fr; gap: 0.6rem; padding: 1.3rem 0; }
   .skill-cert { grid-column: 1; margin-top: 0; }
-  .shelf { grid-template-columns: 1fr; }
-  .shelf-feature { grid-column: auto; grid-row: auto; padding: 2rem 1.5rem; }  .site-nav ul { gap: 1.25rem; }
+  .shelf { gap: 0.9rem; margin: 0 -1.5rem; padding: 0.25rem 1.5rem 1rem; scroll-padding: 0 1.5rem; }
+  .shelf > *, .shelf > .shelf-feature { flex-basis: 82%; }
+  .shelf-feature { padding: 2rem 1.5rem; }
+  .shelf-feature .shelf-quote { font-size: 2rem; }
+  .site-nav ul { gap: 1.25rem; }
   html { scroll-padding-top: 8rem; }
   .contact-card { padding: 2.25rem 1.5rem; border-radius: 18px; }
   .contact-card--compact { grid-template-columns: 1fr; row-gap: 0.75rem; }
