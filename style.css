@@ -232,6 +232,9 @@ a:focus-visible {
   font-size: 1.05rem;
   color: var(--purple);
 }
+.number-link { text-decoration: underline; text-decoration-color: var(--lilac); text-underline-offset: 3px; }
+.number-link:hover { text-decoration-color: var(--purple); }
+.number-link:hover .number-project { color: var(--purple-deep); }
 
 .numbers-next {
   background: none;
