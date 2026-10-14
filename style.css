@@ -939,6 +939,8 @@ body.lightbox-open { overflow: hidden; }
 .side-head h2 { margin-bottom: 0.75rem; }
 .side-head p { max-width: 62rem; font-size: 1.1rem; color: var(--muted); }
 .side-head em { color: var(--purple); }
+.pen-name { text-decoration: underline; text-decoration-color: var(--lilac); text-underline-offset: 3px; }
+.pen-name:hover { text-decoration-color: var(--purple); }
 .shelf {
   display: flex; gap: 1.25rem;
   overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; -webkit-overflow-scrolling: touch;
