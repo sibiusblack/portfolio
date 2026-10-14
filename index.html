@@ -323,7 +323,15 @@
             <span class="shelf-foot"><span>Instagram</span><span class="shelf-read">Read &rarr;</span></span>
           </a>
         </div>
-
+        
+        <div class="shelf-nav">
+          <p class="shelf-hint">Swipe or use the arrows to see more</p>
+          <div class="shelf-arrows">
+            <button type="button" class="shelf-arrow" data-dir="-1" aria-label="Previous essays">&larr;</button>
+            <button type="button" class="shelf-arrow" data-dir="1" aria-label="More essays">&rarr;</button>
+        </div>
+          
+        </div>
         <div class="shelf-follow">
           <span class="more-links-label">Follow along</span>
           <a class="more-btn" href="https://sibiusblack.substack.com/" target="_blank" rel="noopener"><svg class="pill-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 3h18v2.6H3zM3 7.7h18v2.6H3zM3 12.4h18V21l-9-5-9 5z"/></svg>Substack</a>
@@ -449,6 +457,32 @@
       });
     });
   </script>
-  
+
+  <script>
+    // Essays shelf: arrow buttons scroll one card at a time
+    (function () {
+      var shelf = document.querySelector('.shelf');
+      var arrows = document.querySelectorAll('.shelf-arrow');
+      if (!shelf || !arrows.length) return;
+      function step() {
+        var card = shelf.querySelector('.shelf-card');
+        return card ? card.getBoundingClientRect().width + 20 : shelf.clientWidth * 0.8;
+      }
+      function update() {
+        var max = shelf.scrollWidth - shelf.clientWidth - 2;
+        arrows[0].disabled = shelf.scrollLeft <= 2;
+        arrows[1].disabled = shelf.scrollLeft >= max;
+      }
+      arrows.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          shelf.scrollBy({ left: step() * Number(btn.dataset.dir), behavior: 'smooth' });
+        });
+      });
+      shelf.addEventListener('scroll', update, { passive: true });
+      window.addEventListener('resize', update);
+      update();
+    })();
+  </script>
+    
 </body>
 </html>
